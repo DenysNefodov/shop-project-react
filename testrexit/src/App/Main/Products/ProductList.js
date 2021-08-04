@@ -14,7 +14,8 @@ const ProductList = () => {
                         description,
                         type,
                         capacity,
-                        price
+                        price,
+                        image,
                     }
                     ) => (
                             <ProductListItem
@@ -24,6 +25,7 @@ const ProductList = () => {
                             type={type}
                             capacity={capacity}
                             price={price}
+                            image={image}
                         />
                     ))
                 }

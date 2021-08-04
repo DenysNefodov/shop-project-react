@@ -6,7 +6,7 @@
     background: rgba(51,102,204,0.75);
     font-size: 21px;
     letter-spacing: 0.5px;
-    
+
 }
 .product-title {
     font-size: 26px;
@@ -42,4 +42,11 @@
     font-size: 36px;
     text-align: center;
     margin: 10px 0;
+}
+
+.product-img {
+    background-color: rgba(255, 255, 255, .75);
+    padding: 15px 0;
+    margin-bottom: 15px;
+    text-align: center;
 }

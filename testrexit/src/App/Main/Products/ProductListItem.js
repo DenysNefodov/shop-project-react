@@ -7,10 +7,14 @@ const ProductListItem = ({
     description,
     type,
     capacity,
-    price
+    price,
+    image
 }) => {
 	return (
         <div className="product-list-item">
+            <div className="product-img">
+                <img src={image} alt="" />
+            </div>
             <div className="product-title">{name}</div>
             <div className="product-description">{description}</div>
             <div className="product-features">{type}</div>
@@ -30,7 +34,8 @@ ProductListItem.propTypes = {
 }
 
 ProductListItem.defaultProps = {
-    description:"No description..."
+    description:"No description...",
+    image:"/images/noimage.png"
 }
 
 export default ProductListItem
