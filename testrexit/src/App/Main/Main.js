@@ -1,15 +1,17 @@
 import React from 'react'
 
+import ProductList from "./Products/ProductList"
+
 const Main = () => {
 	return (
 		<main className="main">
 			<div className="container">
-				<div className="row">
+				<div className="row-main">
 				<div className="aside">
 					Filter
 				</div>
 				<div className="main-content">
-					Product List
+					<ProductList/>
 				</div>
 				</div>
 			</div>
