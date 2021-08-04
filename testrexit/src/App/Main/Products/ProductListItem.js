@@ -40,10 +40,12 @@ class ProductListItem extends Component {
                 <div className="product-capacity">{capacity}</div>
                 <div className="product-quantity">
                     <button
+                        disabled={this.state.productCount <= 1}
                         onClick={() => this.onDecrementClick()}
                     >-</button>
                     <input type="text" value={this.state.productCount} readOnly/>
                     <button
+                        disabled={this.state.productCount >= 10}
                         onClick={() => this.onIncrementClick()}
                     >+</button>
                 </div>
