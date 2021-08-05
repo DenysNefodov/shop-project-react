@@ -21,20 +21,6 @@ class ProductListItem extends Component {
         }))
     }
 
-    changeColor = () => {
-        this.setState((prevState) => {
-            if (prevState.color === "red") {
-                return {
-                    color: "green"
-                }
-            } else {
-                return {
-                    color: "red"
-                }
-            }
-        })
-    }
-
     render() {
         const {
             name,
@@ -50,10 +36,6 @@ class ProductListItem extends Component {
                     <img src={image} alt="" />
                 </div>
                 <div className="product-title">{name}</div>
-                <p>Color:{this.state.color}</p>
-                <button
-                    onClick={this.changeColor}
-                >Change color</button>
                 <div className="product-description">{description}</div>
                 <div className="product-features">{type}</div>
                 <div className="product-capacity">{capacity}</div>

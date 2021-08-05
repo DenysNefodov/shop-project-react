@@ -6,14 +6,21 @@ import Cart from "./Cart/Cart"
 
 import "./header.css"
 
-const Header = () => {
+const Header = ({
+
+	cartData
+
+}) => {
 	return (
 		<header className="header">
 			<div className="container">
 				<div className="header-row">
 			<Logo/>
 			<Menu/>
-			<Cart/>
+			<Cart
+				count={cartData.count}
+				price={cartData.price}
+			/>
 				</div>
 			</div>
         </header>
