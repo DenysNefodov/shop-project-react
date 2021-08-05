@@ -5,6 +5,7 @@ import "./cart.css"
 const Cart = ({
     productsInCart
 
+
 }) => {
     return (
         <div className="cart text-center">
