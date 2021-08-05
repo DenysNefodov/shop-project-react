@@ -4,8 +4,6 @@ const ShippingPage = () => {
     return (
         <>
             <h1 className="page-title">Shipping Page</h1>
-
-
         </>
     )
 }

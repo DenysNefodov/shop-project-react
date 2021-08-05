@@ -11,6 +11,8 @@ class App extends Component {
 
     state = {
         productsInCart: {
+            1:3,
+            3:2
         }
     }
 
@@ -31,6 +33,7 @@ class App extends Component {
                 />
                 <Main
                     addProductToCart={this.addProductToCart}
+                    productsInCart={this.state.productsInCart}
                 />
                 <Footer/>
             </>
