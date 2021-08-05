@@ -1,7 +1,8 @@
 import React from 'react'
 import { Route } from 'react-router'
 import CartPage from './CartPage/CartPage'
-
+import PaymentPage from './PaymentPage/PaymentPage'
+import ShippingPage from './ShippingPage/ShippingPage'
 import ProductList from "./Products/ProductList"
 
 const Main = ({
@@ -21,6 +22,8 @@ const Main = ({
 						/>
 					)}  />
 					<Route path="/cart" component={CartPage}/>
+					<Route path="/payment" component={PaymentPage}/>
+					<Route path="/shipping" component={ShippingPage}/>
 				</div>
 				</div>
 			</div>
