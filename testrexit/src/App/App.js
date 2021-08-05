@@ -18,9 +18,9 @@ class App extends Component {
 
     addProductToCart = (id, count) => {
         this.setState((prevState) => ({
-            productsInCart: {
+            productsInCart: Object.assign({}, prevState.productsInCart,{
                 [id]:prevState.productsInCart[id] + count
-            }
+            })
         }))
     }
 
@@ -30,7 +30,7 @@ class App extends Component {
                 <Header
                     productsInCart={this.state.productsInCart}
                 />
-                <button onClick={() => this.addProductToCart(2,5)}></button>
+                <button onClick={() => this.addProductToCart(2,5)}>Add to cart</button>
                 <Main
                     addProductToCart={this.addProductToCart}
                 />
