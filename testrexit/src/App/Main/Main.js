@@ -25,7 +25,7 @@ const Main = ({
 					<Route path="/cart" render={() => (
 							<CartPage productsInCart={productsInCart}/>
 						)}
-						/>
+					/>
 					<Route path="/payment" component={PaymentPage}/>
 					<Route path="/shipping" component={ShippingPage}/>
 				</div>
