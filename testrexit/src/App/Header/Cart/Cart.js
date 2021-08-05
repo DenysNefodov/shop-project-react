@@ -2,6 +2,7 @@ import React from 'react'
 import {keys} from 'lodash'
 import "./cart.css"
 import products from '../../Main/Products/products'
+import { Link } from 'react-router-dom'
 
 
 const productsObject = products.reduce((obj, product) => ({
@@ -25,6 +26,7 @@ const Cart = ({
                     ),0)
 
                 }$</div>
+                <Link to="/cart">Show cart</Link>
 		</div>
     )
 }
