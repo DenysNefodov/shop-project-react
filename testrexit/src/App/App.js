@@ -11,7 +11,8 @@ class App extends Component {
 
     state = {
         productsInCart: {
-
+            1:2,
+            2:3
         }
     }
 
@@ -24,6 +25,18 @@ class App extends Component {
         }))
     }
 
+    removeProductFromCart = (productsId) => {
+        this.setState((prevState) => {
+            const prevProductsInCart = {...prevState.productsInCart}
+
+            delete prevProductsInCart[productsId];
+
+            return {
+                productsInCart:prevProductsInCart
+            }
+        })
+    }
+
     render() {
         return (
             <>
@@ -33,6 +46,7 @@ class App extends Component {
                 <Main
                     addProductToCart={this.addProductToCart}
                     productsInCart={this.state.productsInCart}
+                    removeProductFromCart={this.removeProductFromCart}
                 />
                 <Footer/>
             </>
