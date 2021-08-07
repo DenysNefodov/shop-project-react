@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import "./cart.css"
 import { Link } from 'react-router-dom'
 import CartTotal from '../../../Components/Cart/CartTotal'
@@ -21,4 +22,10 @@ const Cart = ({
     )
 }
 
-export default Cart
+const mapState = state => ({
+    productsInCart:state.productsInCart
+})
+
+export default connect(
+    mapState
+)(Cart)
