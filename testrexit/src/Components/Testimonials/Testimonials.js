@@ -5,6 +5,12 @@ const Testimonials = () => {
     const [count, setCount] = useState(1)
     const [color, setColor] = useState("green")
 
+    const toogleColor = () => {
+        setColor((value) => (
+            value === "red" ? "green" : "red"
+        ))
+    }
+
 
     return (
         <>
@@ -13,7 +19,7 @@ const Testimonials = () => {
             <div>
                 Color:{color}
                 <div>
-                    <button onClick={() => setColor("red")}>Change color</button>
+                    <button onClick={() => toogleColor()}>Change color</button>
                 </div>
             </div>
 
