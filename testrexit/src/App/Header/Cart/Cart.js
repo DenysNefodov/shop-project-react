@@ -6,12 +6,14 @@ import CartProductList from '../../../Components/Cart/CartProductList'
 
 
 const Cart = ({
-    productsInCart
+    productsInCart,
+    products
 }) => {
     return (
         <div className="cart text-center">
             <CartProductList
                 productsInCart={productsInCart}
+                products={products}
             />
             <CartTotal
                 productsInCart={productsInCart}

@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import CartTotal from '../../../Components/Cart/CartTotal'
 import CartProductList from '../../../Components/Cart/CartProductList'
 import CartProductListItemExtended from '../../../Components/Cart/CartProductListItemExtended'
@@ -8,7 +9,8 @@ import CartProductListItemExtended from '../../../Components/Cart/CartProductLis
 const CartPage = ({
     productsInCart,
     removeProductFromCart,
-    changeProductQuantity
+    changeProductQuantity,
+    products
 }) => {
     return (
         <>
@@ -18,10 +20,12 @@ const CartPage = ({
                 CartItem={CartProductListItemExtended}
                 removeProductFromCart={removeProductFromCart}
                 changeProductQuantity={changeProductQuantity}
+                products={products}
             />
             <CartTotal
                 productsInCart={productsInCart}
             />
+            <Link to="/checkout">Proceed to checkout</Link>
         </>
     )
 }

@@ -1,14 +1,13 @@
-import React from 'react'
+import React from "react"
 
 const CartProductListItem = ({
+    product,
     productCount,
-    product
-
 }) => {
     return (
-            <div>
-                {product.name} : {productCount}
-            </div>
+        <div>
+            {product.name}: {productCount}
+        </div>
     )
 }
 

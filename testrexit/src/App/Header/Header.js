@@ -7,7 +7,7 @@ import Cart from "./Cart/Cart"
 import "./header.css"
 
 const Header = ({
-
+	products,
 	productsInCart
 
 }) => {
@@ -18,6 +18,7 @@ const Header = ({
 			<Logo/>
 			<Menu/>
 			<Cart
+				products={products}
 				productsInCart={productsInCart}
 			/>
 				</div>

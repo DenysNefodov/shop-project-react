@@ -1,17 +1,19 @@
 import React from 'react'
-import { Route } from 'react-router'
+import { Route } from 'react-router-dom'
 import CartPage from './CartPage/CartPage'
 import PaymentPage from './PaymentPage/PaymentPage'
 import ShippingPage from './ShippingPage/ShippingPage'
 import ProductList from "./Products/ProductList"
 import Testimonials from '../../Components/Testimonials/Testimonials'
+import CheckoutPage from './CheckoutPage/CheckoutPage'
 
 
 const Main = ({
 	addProductToCart,
 	productsInCart,
 	removeProductFromCart,
-	changeProductQuantity
+	changeProductQuantity,
+	products
 }) => {
 	return (
 		<main className="main">
@@ -24,6 +26,7 @@ const Main = ({
 					<Route path="/" exact render={() => (
 						<ProductList
 						addProductToCart={addProductToCart}
+						products={products}
 						/>
 					)}  />
 					<Route path="/cart" render={() => (
@@ -31,12 +34,14 @@ const Main = ({
 								productsInCart={productsInCart}
 								removeProductFromCart={removeProductFromCart}
 								changeProductQuantity={changeProductQuantity}
+								products={products}
 							/>
 						)}
 					/>
 					<Route path="/payment" component={PaymentPage}/>
 					<Route path="/shipping" component={ShippingPage}/>
 					<Route path="/" exact component={Testimonials}/>
+					<Route path="/checkout" component={CheckoutPage}/>
 				</div>
 				</div>
 			</div>
