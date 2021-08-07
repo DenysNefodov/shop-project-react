@@ -8,7 +8,8 @@ import ProductList from "./Products/ProductList"
 const Main = ({
 	addProductToCart,
 	productsInCart,
-	removeProductFromCart
+	removeProductFromCart,
+	changeProductQuantity
 }) => {
 	return (
 		<main className="main">
@@ -27,6 +28,7 @@ const Main = ({
 							<CartPage
 								productsInCart={productsInCart}
 								removeProductFromCart={removeProductFromCart}
+								changeProductQuantity={changeProductQuantity}
 							/>
 						)}
 					/>

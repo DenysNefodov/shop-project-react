@@ -8,7 +8,8 @@ const CartProductList = ({
     productsInCart,
     productsObject = getProductsObject(products),
     CartItem = CartProductListItem,
-    removeProductFromCart
+    removeProductFromCart,
+    changeProductQuantity
 }) => {
     return (
         <div>
@@ -19,6 +20,7 @@ const CartProductList = ({
                         product={productsObject[productId]}
                         productCount={productsInCart[productId]}
                         removeProductFromCart={removeProductFromCart}
+                        changeProductQuantity={changeProductQuantity}
                     />
                 ))
             }
