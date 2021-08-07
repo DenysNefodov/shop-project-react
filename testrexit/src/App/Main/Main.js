@@ -7,12 +7,7 @@ import ProductList from "./Products/ProductList"
 import Testimonials from '../../Components/Testimonials/Testimonials'
 
 
-const Main = ({
-	addProductToCart,
-	productsInCart,
-	removeProductFromCart,
-	changeProductQuantity
-}) => {
+const Main = () => {
 	return (
 		<main className="main">
 			<div className="container">
@@ -21,19 +16,8 @@ const Main = ({
 					Filter
 				</div>
 				<div className="main-content">
-					<Route path="/" exact render={() => (
-						<ProductList
-						addProductToCart={addProductToCart}
-						/>
-					)}  />
-					<Route path="/cart" render={() => (
-							<CartPage
-								productsInCart={productsInCart}
-								removeProductFromCart={removeProductFromCart}
-								changeProductQuantity={changeProductQuantity}
-							/>
-						)}
-					/>
+					<Route path="/" exact component={ProductList}/>
+					<Route path="/cart" component={CartPage}/>
 					<Route path="/payment" component={PaymentPage}/>
 					<Route path="/shipping" component={ShippingPage}/>
 					<Route path="/" exact component={Testimonials}/>
