@@ -21,6 +21,8 @@ class ProductListItem extends Component {
         }))
     }
 
+
+
     render() {
         const {
             id,
@@ -31,12 +33,20 @@ class ProductListItem extends Component {
             price,
             image,
             addProductToCart,
+            isLiked,
+            removeLike,
+            addLike
         } = this.props;
         return (
             <div className="product-list-item">
                 <div className="product-img">
                     <img src={image} alt="" />
                 </div>
+                <button onClick={() =>
+                    isLiked ? removeLike(id) : addLike (id)
+                }>
+                    {isLiked ? <span>&#9829;</span> : <span>&#9825;</span>}
+                </button>
                 <div className="product-title">{name}</div>
                 <div className="product-description">{description}</div>
                 <div className="product-features">{type}</div>
