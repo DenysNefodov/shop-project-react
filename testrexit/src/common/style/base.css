@@ -56,6 +56,10 @@ body {
 	grid-gap: 15px;
 }
 
+.red {
+	color: red;
+}
+
 @media(min-width: 768px) {
 	.container {
 		width: 750px;

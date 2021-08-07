@@ -4,6 +4,7 @@ import CartPage from './CartPage/CartPage'
 import PaymentPage from './PaymentPage/PaymentPage'
 import ShippingPage from './ShippingPage/ShippingPage'
 import ProductList from "./Products/ProductList"
+import ProductPage from './ProductPage/ProductPage'
 
 const Main = ({
 	addProductToCart,
@@ -34,6 +35,7 @@ const Main = ({
 					/>
 					<Route path="/payment" component={PaymentPage}/>
 					<Route path="/shipping" component={ShippingPage}/>
+					<Route path="/products/:id" component={ProductPage}/>
 				</div>
 				</div>
 			</div>

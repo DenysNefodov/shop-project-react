@@ -22,10 +22,10 @@ const CartProductListItemExtended = ({
                         <span> {product.name} </span>
                     </p>
                     <p className="cart-extended-price">
-                         Price for one item: <span className="bold">$ {product.price} </span>
+                        Price for one item: <span className="bold">$ {product.price} </span>
                     </p>
                     <p className="cart-extended-count">
-                         Selected quantity: <span className="bold"> {productCount} </span>
+                        Selected quantity: <span className="bold"> {productCount} </span>
 
                     </p>
                     <p className="cart-extended-sum">
