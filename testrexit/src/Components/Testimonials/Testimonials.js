@@ -2,30 +2,82 @@ import React, { useState } from 'react'
 
 const Testimonials = () => {
 
-    const [count, setCount] = useState(1)
-    const [color, setColor] = useState("green")
+    const arrTestimonials = [
+        {name:"Ярослав", text: "Начиная с распаковки, ноут упакован в красувую фирменную упаковку rog. Сама коробка была уже немножко потертая затем обклеена пленкой. Доставка курьером заняла 1 день. "},
+        {name: "Denys", text: "USB 3.0 роз'єми тільки з одного боку."}
+    ]
 
-    const toogleColor = () => {
-        setColor((value) => (
-            value === "red" ? "green" : "red"
-        ))
+    const [testimonials, setTestimonials] = useState(arrTestimonials)
+
+    const [newTestimonials, setNewTestimonials] = useState({
+        name:"",
+        text:"",
+    })
+
+    const handleNameChange = (e) => {
+        setNewTestimonials((value) => ({
+            ...value,
+            name:e.target.value
+        }))
     }
 
+    const handleTextChange = (e) => {
+        setNewTestimonials((value) => ({
+            ...value,
+            text:e.target.value
+        }))
+    }
+
+    const sendForm = (e) => {
+        e.preventDefault();
+        setTestimonials(value => {
+            return [...value, newTestimonials]
+        })
+    }
+
+    console.log(newTestimonials)
 
     return (
         <>
             <h1 className="page-title">Testimonials</h1>
 
-            <div>
-                Color:{color}
-                <div>
-                    <button onClick={() => toogleColor()}>Change color</button>
+        {
+            testimonials.map((item) => (
+                <div style={{
+                    backgroundColor:"rgba(255, 255, 255, .75",
+                    padding:"10px",
+                }}>
+                    <div style={{marginBottom:"10px"}}>Name: {item.name}</div>
+                    <div style={{marginBottom:"10px"}}>Message text: {item.text}</div>
                 </div>
+            ))
+        }
+
+        <form onSubmit={sendForm}
+            style={{
+                marginTop:"40px"
+            }}
+        >
+            <div>
+                <input
+                    type="text"
+                    placeholder="Name:"
+                    value={newTestimonials.name}
+                    onChange={handleNameChange}
+                />
+            </div>
+            <div>
+                <textarea
+                    cols="30" rows="10"
+                    placeholder="Message:"
+                    value={newTestimonials.text}
+                    onChange={handleTextChange}
+                ></textarea>
             </div>
 
-            <button onClick={() => setCount(count - 1)}>-</button>
-            <input type="text" value={count}/>
-            <button onClick={() => setCount(count + 1)}>+</button>
+        <button>Send</button>
+        </form>
+
         </>
     )
 }
